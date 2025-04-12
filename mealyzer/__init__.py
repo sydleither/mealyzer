@@ -8,5 +8,12 @@ from flask import Flask
 from mealyzer import views
 
 
-app = Flask(__name__)
-app.register_blueprint(views.bp)
+def create_app():
+    """Create Flask app instance.
+
+    :return: app
+    :rtype: Flask object
+    """
+    app = Flask(__name__)
+    app.register_blueprint(views.bp)
+    return app
